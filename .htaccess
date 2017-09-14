@@ -148,6 +148,12 @@ Header set Cache-Control "max-age=2592000, public"
   FileETag None 
 </IfModule>
 
+<IfModule mod_headers.c>
+<FilesMatch ".(js|css|xml|gz|html)$">
+Header append Vary: Accept-Encoding
+</FilesMatch>
+</IfModule>
+
 # ----------------------------------------------------------------------
 # | 6g Firewall für Sicherheit - HIER NICHTS AENDERN, ANSONSTEN IST DIE WEBSITE ANGREIFBAR
 # ----------------------------------------------------------------------
