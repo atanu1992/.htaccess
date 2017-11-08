@@ -115,8 +115,10 @@ AddOutputFilterByType DEFLATE application/ld+json
 AddOutputFilterByType DEFLATE application/vnd.ms-fontobject 
 AddOutputFilterByType DEFLATE application/x-font-ttf
 AddOutputFilterByType DEFLATE application/font-woff2
-AddOutputFilterByType DEFLATE application/x-web-app-manifest+json 
-AddOutputFilterByType DEFLATE font/opentype 
+AddOutputFilterByType DEFLATE application/x-font-woff
+AddOutputFilterByType DEFLATE application/x-web-app-manifest+json font/woff
+AddOutputFilterByType DEFLATE font/woff 
+AddOutputFilterByType DEFLATE font/opentype
 AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE image/x-icon 
 
