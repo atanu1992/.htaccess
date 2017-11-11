@@ -328,6 +328,30 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 #</Files>
 
 # ----------------------------------------------------------------------
+#  HTTP SECURITY HEADER
+# ----------------------------------------------------------------------
+
+## X-FRAME-OPTIONS-Header
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "sameorigin"
+</IfModule>
+
+## X-XSS-PROTECTION-Header
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+## X-Content-Type-Options-Header
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+## Strict-Transport-Security-Header - Only HTTPS Websites
+#<IfModule mod_headers.c>
+#    Header set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+#</IfModule>
+
+# ----------------------------------------------------------------------
 # The original WordPress Rewrite Rules - Do not change anything here, 
 # except you are using a WordPress Multisite
 # ----------------------------------------------------------------------
