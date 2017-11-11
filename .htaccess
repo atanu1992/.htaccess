@@ -331,6 +331,8 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 #  HTTP SECURITY HEADER
 # ----------------------------------------------------------------------
 
+### @see https://scotthelme.co.uk/hardening-your-http-response-headers
+
 ## X-FRAME-OPTIONS-Header
 <IfModule mod_headers.c>
     Header set X-Frame-Options "sameorigin"
