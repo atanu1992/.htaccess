@@ -1,5 +1,7 @@
 ########################################################################
-# OPTIMAL .htaccess FILE FOR SPEED AND SECURITY
+
+# OPTIMAL .htaccess FILE FOR SPEED AND SECURITY @Version 2018
+
 ########################################################################
 
 
@@ -188,8 +190,6 @@ Header append Vary: Accept-Encoding
 
 # 6G FIREWALL/BLACKLIST - Version 2018
 # @ https://perishablepress.com/6g/
-# 6G FIREWALL/BLACKLIST
-# @ https://perishablepress.com/6g/
 
 # 6G:[QUERY STRINGS]
 <IfModule mod_rewrite.c>
@@ -318,19 +318,46 @@ RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
 RewriteRule ^wp-includes/theme-compat/ - [F,L]
 </IfModule>
 
+# ------------------------------------------------------------------------------
+#   Ultimate hotlink protection - IMPORTANT: Change »domain« to your domain name
+# ------------------------------------------------------------------------------
+
+
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ RewriteCond %{HTTP_REFERER}     !^$
+ RewriteCond %{REQUEST_FILENAME} -f
+ RewriteCond %{REQUEST_FILENAME} \.(gif|jpe?g?|png)$           [NC]
+ RewriteCond %{HTTP_REFERER}     !^https?://([^.]+\.)?domain\. [NC]
+ RewriteRule \.(gif|jpe?g?|png)$                             - [F,NC,L]
+</ifModule>
+
+# ----------------------------------------------------------------------
+#   Protect your WordPress Login with HTTP Authentification
+# ----------------------------------------------------------------------
+
+# If you want to use it, comment it out and set your path to .htpasswd
+#<Files wp-login.php>
+#AuthName "Admin-Bereich"
+#AuthType Basic
+#AuthUserFile /usr/local/www/apache24/your-path/your-domain.com/.htpasswd 
+#require valid-user
+#</Files>
+
 # ----------------------------------------------------------------------
 #   Switch off the security risk XML-RPC interface completely
 # ----------------------------------------------------------------------
 
 ### @see https://digwp.com/2009/06/xmlrpc-php-security/
 
-#<Files xmlrpc.php>
-# Order Deny,Allow
-# Deny from all
-#</Files>
+<Files xmlrpc.php>
+ Order Deny,Allow
+ Deny from all
+</Files>
+
 
 # ----------------------------------------------------------------------
-#  HTTP SECURITY HEADER
+#  HTTP SECURITY HEADER | IF YOU USE HTTPS, COMMENT LAST HEADER OUT
 # ----------------------------------------------------------------------
 
 ### @see https://scotthelme.co.uk/hardening-your-http-response-headers
@@ -352,7 +379,7 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 
 ## Strict-Transport-Security-Header - Only HTTPS Websites
 #<IfModule mod_headers.c>
-#    Header set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+#   Header set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
 #</IfModule>
 
 # ----------------------------------------------------------------------
