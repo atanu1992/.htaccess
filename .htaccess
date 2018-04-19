@@ -378,8 +378,7 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
     Header set X-Content-Type-Options "nosniff"
 </IfModule>
 
-### if you are using https on your website, comment this block out
-## Strict-Transport-Security-Header - Only HTTPS Websites
+## Strict-Transport-Security-Header - if you are using https on your website, comment this block out
 #<IfModule mod_headers.c>
 #   Header set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
 #</IfModule>
