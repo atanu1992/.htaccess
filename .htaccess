@@ -26,6 +26,18 @@
 </IfModule>
 
 # ----------------------------------------------------------------------
+# | BLOCK NUISANCE REQUESTS - New in 2018                                             
+# ----------------------------------------------------------------------
+
+# perishablepress.com/block-nuisance-requests
+<IfModule mod_alias.c>
+	RedirectMatch 403 (?i)\.php\.suspected
+	RedirectMatch 403 (?i)\.(git|well-known)
+	RedirectMatch 403 (?i)apple-app-site-association
+	RedirectMatch 403 (?i)/autodiscover/autodiscover.xml
+</IfModule>
+
+# ----------------------------------------------------------------------
 # | Compressing and Caching - Version 2017                                                    |
 # ----------------------------------------------------------------------
 
