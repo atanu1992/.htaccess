@@ -197,10 +197,10 @@ Header append Vary: Accept-Encoding
 </IfModule>
 
 # ----------------------------------------------------------------------
-# | 6g Firewall for Security - Do not change this part @Update 2018
+# | 6g Firewall for Security - Do not change this part @Update 2019
 # ----------------------------------------------------------------------
 
-# 6G FIREWALL/BLACKLIST - Version 2018
+# 6G FIREWALL/BLACKLIST - Version 2019
 # @ https://perishablepress.com/6g/
 
 # 6G:[QUERY STRINGS]
