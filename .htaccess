@@ -349,7 +349,7 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 
 # --------------------------------------------------------------------------------------------
 #   Ultimate hotlink protection - IMPORTANT: Change »?domain\« in line 361 to your domain name
-#   Example: ?andreas-hecht\ ### if you do not use https, change https in line 332 to http
+#   Example: ?andreas-hecht\ ### if you do not use https, change https in line 361 to http
 # --------------------------------------------------------------------------------------------
 
 
