@@ -418,6 +418,12 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 #   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 #</IfModule>
 
+## This prevents that false issued certificates for this website can be used unnoticed. (Experimental)
+## @see https://tools.ietf.org/html/draft-ietf-httpbis-expect-ct-02
+<IfModule mod_headers.c>
+   Header set Expect-CT "enforce, max-age=21600"	
+</IfModule>
+
 # ----------------------------------------------------------------------
 # The original WordPress Rewrite Rules - Do not change anything here, 
 # except you are using a WordPress Multisite
