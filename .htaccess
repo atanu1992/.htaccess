@@ -387,11 +387,11 @@ RewriteRule ^wp-includes/theme-compat/ - [F,L]
 
 
 # -----------------------------------------------------------------------------
-#  HTTP SECURITY HEADER | IF YOU USE HTTPS, COMMENT ONE OF THE LAST HEADERS OUT
+#  HTTP SECURITY HEADER | Test on: https://securityheaders.com | UPDATE 2019
 # -----------------------------------------------------------------------------
 
 ### @see https://scotthelme.co.uk/hardening-your-http-response-headers
-### UPDATE 2018
+### UPDATE 2019
 
 ## No-Referrer-Header
 <IfModule mod_headers.c>
